@@ -1,6 +1,6 @@
 <?php
 
-namespace MattHixson1\Mimey;
+namespace Opia\Lib\Mimey;
 
 /**
  * Class for converting MIME types to file extensions and vice versa.

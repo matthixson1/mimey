@@ -1,6 +1,6 @@
 <?php
 
-namespace MattHixson1\Mimey;
+namespace Opia\Lib\Mimey;
 
 /**
  * Generates a mapping for use in the MimeTypes class.

@@ -1,6 +1,6 @@
 <?php
 
-namespace MattHixson1\Mimey;
+namespace Opia\Lib\Mimey;
 
 /**
  * An interface for converting between MIME types and file extensions.

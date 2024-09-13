@@ -1,13 +1,13 @@
 <?php
 
-namespace MattHixson1\Mimey\Tests;
+namespace Opia\Lib\Mimey\Tests;
 
-use MattHixson1\Mimey\MimeTypes;
+use Opia\Lib\Mimey\MimeTypes;
 use PHPUnit\Framework\TestCase;
 
 class MimeTypesTest extends TestCase
 {
-	/** @var \MattHixson1\Mimey\MimeTypes */
+	/** @var \Opia\Lib\Mimey\MimeTypes */
 	protected $mime;
 
 	protected function setUp(): void

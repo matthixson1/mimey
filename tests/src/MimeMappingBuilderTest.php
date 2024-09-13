@@ -1,9 +1,9 @@
 <?php
 
-namespace MattHixson1\Mimey\Tests;
+namespace Opia\Lib\Mimey\Tests;
 
-use MattHixson1\Mimey\MimeTypes;
-use MattHixson1\Mimey\MimeMappingBuilder;
+use Opia\Lib\Mimey\MimeTypes;
+use Opia\Lib\Mimey\MimeMappingBuilder;
 use PHPUnit\Framework\TestCase;
 
 class MimeMappingBuilderTest extends TestCase

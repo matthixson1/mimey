@@ -14,7 +14,7 @@ which is then wrapped by helper class `\Mimey\MimeTypes`.
 ## Usage
 
 ```php
-$mimes = new \MattHixson1\Mimey\MimeTypes;
+$mimes = new \Opia\Lib\Mimey\MimeTypes;
 
 // Convert extension to MIME type:
 $mimes->getMimeType('json'); // application/json
@@ -47,12 +47,12 @@ There is a `MimeMappingBuilder` that can help with this:
 
 ```php
 // Create a builder using the built-in conversions as the basis.
-$builder = \MattHixson1\Mimey\MimeMappingBuilder::create();
+$builder = \Opia\Lib\Mimey\MimeMappingBuilder::create();
 
 // Add a conversion. This conversion will take precedence over existing ones.
 $builder->add('custom/mime-type', 'myextension');
 
-$mimes = new \MattHixson1\Mimey\MimeTypes($builder->getMapping());
+$mimes = new \Opia\Lib\Mimey\MimeTypes($builder->getMapping());
 $mimes->getMimeType('myextension'); // custom/mime-type
 $mimes->getExtension('custom/mime-type'); // myextension
 ```
@@ -86,8 +86,8 @@ The file can then be loaded to avoid overhead of repeated `$builder->add(...)` c
 
 ```php
 // Load the conversions from a cached file.
-$builder = \MattHixson1\Mimey\MimeMappingBuilder::load($cache_file_path);
-$mimes = new \MattHixson1\Mimey\MimeTypes($builder->getMapping());
+$builder = \Opia\Lib\Mimey\MimeMappingBuilder::load($cache_file_path);
+$mimes = new \Opia\Lib\Mimey\MimeTypes($builder->getMapping());
 ```
 
 ## Install
@@ -95,5 +95,5 @@ $mimes = new \MattHixson1\Mimey\MimeTypes($builder->getMapping());
 Compatible with PHP >= 8.3
 
 ```
-composer require matthixson1/mimey
+composer require Opia\Lib/mimey
 ```

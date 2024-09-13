@@ -1,8 +1,8 @@
 <?php
 
-namespace MattHixson1\Mimey\Tests;
+namespace Opia\Lib\Mimey\Tests;
 
-use MattHixson1\Mimey\MimeMappingGenerator;
+use Opia\Lib\Mimey\MimeMappingGenerator;
 use PHPUnit\Framework\TestCase;
 
 class MimeMappingGeneratorTest extends TestCase

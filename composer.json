@@ -1,13 +1,8 @@
 {
-  "name": "matthixson1/mimey",
+  "name": "opia/mimey",
   "description": "PHP package for converting file extensions to MIME types and vice versa.",
+  "type": "library",
   "license": "MIT",
-  "authors": [
-    {
-      "name": "Matthew Hixson",
-      "email": "matthew.hixson1@yahoo.com"
-    }
-  ],
   "require": {
     "php": "^8.1"
   },
@@ -16,12 +11,12 @@
   },
   "autoload": {
     "psr-4": {
-      "MattHixson1\\Mimey\\": "src/"
+      "Opia\\Lib\\Mimey\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "MattHixson1\\Mimey\\Tests\\": "tests/src/"
+      "Opia\\Lib\\Mimey\\Tests\\": "tests/src/"
     }
   }
 }
