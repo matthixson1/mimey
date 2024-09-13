@@ -95,5 +95,5 @@ $mimes = new \Opia\Lib\Mimey\MimeTypes($builder->getMapping());
 Compatible with PHP >= 8.3
 
 ```
-composer require Opia\Lib/mimey
+composer require Opia\mimey
 ```
