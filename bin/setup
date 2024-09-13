@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+bin/composer install
+bin/php /opt/bin/generate.php

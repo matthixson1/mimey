@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+if [[ -z "$SSH_AUTH_SOCK" ]]
+then
+  eval `ssh-agent -s`
+fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # Mac OSX
+  SSH_SOCK=/run/host-services/ssh-auth.sock
+  USER_OPTS=""
+else
+  SSH_SOCK=$SSH_AUTH_SOCK
+  USER_OPTS=" --volume /etc/passwd:/etc/passwd:ro \
+              --volume /etc/group:/etc/group:ro \
+              --volume $HOME/.ssh:/home/$(whoami)/.ssh:ro \
+              --user $(id -u):$(id -g)"
+fi
+
+if [[ -t 1 ]]; then
+  TTY_ARG="--tty --interactive"
+else
+  TTY_ARG=""
+fi
+
+docker run --rm \
+  --volume $PWD:/app \
+  --volume composer1cache:/tmp/cache \
+  --volume ~/.ssh/known_hosts:/root/.ssh/known_hosts \
+  --volume $SSH_SOCK:/ssh-auth.sock \
+  --env SSH_AUTH_SOCK=/ssh-auth.sock \
+  --network host \
+  $TTY_ARG \
+  $USER_OPTS \
+  --workdir /app \
+  php:8.3-cli-alpine \
+  sh -c "
+    apk add --no-cache git
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    composer $@
+  "
